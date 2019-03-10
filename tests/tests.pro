@@ -18,11 +18,7 @@ LIBS += -lgcov
 HEADERS += ../app/common.h \
     ../app/text/_text.h \
     ../app/text/text.h \
-    showupper_test.h# tst_test1.h \
-   # ../app/myfunc.h \
-    #fibonachi_test.h \
-    #../app/equatation.h \
-    #equatation_test.h
+    showupper_test.h
 
 SOURCES += main.cpp \
     ../app/load.c \
