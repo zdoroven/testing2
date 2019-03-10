@@ -27,6 +27,23 @@ void returnStream(FILE* file, int oldstdOut) {
     dup2(oldstdOut, 1);
 }
 
+int executeTest(FILE* expectedData, FILE* outputData) {
+    if (expectedData == NULL) return 0;
+    if (outputData == NULL) return 0;
+
+    char expectedLine[MAXLINE];
+    char outputLine[MAXLINE];
+
+    while ((fgets(expectedLine, MAXLINE, expectedData) != NULL) | (fgets(outputLine, MAXLINE, outputData) != NULL)) {
+        expectedLine[strlen(expectedLine) - 1] = '\0';
+        outputLine[strlen(outputLine) - 1] = '\0';
+        printf("Expected line: \"%s\", output line: \"%s\" \n", expectedLine, outputLine);
+        if (strcmp(expectedLine, outputLine) != 0) return 0;
+    }
+
+    return 1;
+}
+
 
 
 TEST(showUpperTest, test1) {
@@ -38,7 +55,7 @@ TEST(showUpperTest, test1) {
     int oldstdOut = changeStream(outputFile);
 
     /*
-        Test load
+        Load input data
     */
 
     text txt = create_text();
@@ -59,22 +76,16 @@ TEST(showUpperTest, test1) {
     returnStream(outputFile, oldstdOut);
 
     /*
-        Check output and expected data
+        Execute test
     */
 
     FILE *expectedData = fopen("../../testing2/tests/expected/expected1.txt", "r");
-    if (expectedData == NULL) FAIL();
-    char expectedLine[MAXLINE];
-
     FILE *outputData = fopen("../../testing2/tests/output/output1.txt", "r");
-    if (outputData == NULL) FAIL();
-    char outputLine[MAXLINE];
 
-    while (fgets(expectedLine, MAXLINE, expectedData) != NULL || fgets(outputLine, MAXLINE, outputData) != NULL) {
-        expectedLine[strlen(expectedLine) - 1] = '\0';
-        outputLine[strlen(outputLine) - 1] = '\0';
-        printf("Expected line: %s, output line: %s", expectedLine, outputLine);
-        //if (strcmp(expectedLine, outputLine) != 0) FAIL();
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
     }
 }
 
@@ -82,12 +93,12 @@ TEST(showUpperTest, test2) {
     /*
         Open output file
     */
-    FILE *outputData = fopen("../../testing2/tests/output/output2.txt", "wb");
-    if (outputData == NULL) FAIL();
-    int oldstdOut = changeStream(outputData);
+    FILE *outputFile = fopen("../../testing2/tests/output/output2.txt", "wb");
+    if (outputFile == NULL) FAIL();
+    int oldstdOut = changeStream(outputFile);
 
     /*
-        Test load
+        Load input data
     */
 
     text txt = create_text();
@@ -105,19 +116,32 @@ TEST(showUpperTest, test2) {
         Close output file
     */
 
-    returnStream(outputData, oldstdOut);
+    returnStream(outputFile, oldstdOut);
+
+    /*
+        Execute test
+    */
+
+    FILE *expectedData = fopen("../../testing2/tests/expected/expected2.txt", "r");
+    FILE *outputData = fopen("../../testing2/tests/output/output2.txt", "r");
+
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
 }
 
 TEST(showUpperTest, test3) {
     /*
         Open output file
     */
-    FILE *outputData = fopen("../../testing2/tests/output/output3.txt", "wb");
-    if (outputData == NULL) FAIL();
-    int oldstdOut = changeStream(outputData);
+    FILE *outputFile = fopen("../../testing2/tests/output/output3.txt", "wb");
+    if (outputFile == NULL) FAIL();
+    int oldstdOut = changeStream(outputFile);
 
     /*
-        Test load
+        Load input data
     */
 
     text txt = create_text();
@@ -135,19 +159,32 @@ TEST(showUpperTest, test3) {
         Close output file
     */
 
-    returnStream(outputData, oldstdOut);
+    returnStream(outputFile, oldstdOut);
+
+    /*
+        Execute test
+    */
+
+    FILE *expectedData = fopen("../../testing2/tests/expected/expected3.txt", "r");
+    FILE *outputData = fopen("../../testing2/tests/output/output3.txt", "r");
+
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
 }
 
 TEST(showUpperTest, test4) {
     /*
         Open output file
     */
-    FILE *outputData = fopen("../../testing2/tests/output/output4.txt", "wb");
-    if (outputData == NULL) FAIL();
-    int oldstdOut = changeStream(outputData);
+    FILE *outputFile = fopen("../../testing2/tests/output/output4.txt", "wb");
+    if (outputFile == NULL) FAIL();
+    int oldstdOut = changeStream(outputFile);
 
     /*
-        Test load
+        Load input data
     */
 
     text txt = create_text();
@@ -165,19 +202,32 @@ TEST(showUpperTest, test4) {
         Close output file
     */
 
-    returnStream(outputData, oldstdOut);
+    returnStream(outputFile, oldstdOut);
+
+    /*
+        Execute test
+    */
+
+    FILE *expectedData = fopen("../../testing2/tests/expected/expected4.txt", "r");
+    FILE *outputData = fopen("../../testing2/tests/output/output4.txt", "r");
+
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
 }
 
 TEST(showUpperTest, test5) {
     /*
         Open output file
     */
-    FILE *outputData = fopen("../../testing2/tests/output/output5.txt", "wb");
-    if (outputData == NULL) FAIL();
-    int oldstdOut = changeStream(outputData);
+    FILE *outputFile = fopen("../../testing2/tests/output/output5.txt", "wb");
+    if (outputFile == NULL) FAIL();
+    int oldstdOut = changeStream(outputFile);
 
     /*
-        Test load
+        Load input data
     */
 
     text txt = create_text();
@@ -195,7 +245,20 @@ TEST(showUpperTest, test5) {
         Close output file
     */
 
-    returnStream(outputData, oldstdOut);
+    returnStream(outputFile, oldstdOut);
+
+    /*
+        Execute test
+    */
+
+    FILE *expectedData = fopen("../../testing2/tests/expected/expected5.txt", "r");
+    FILE *outputData = fopen("../../testing2/tests/output/output5.txt", "r");
+
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
 }
 
 
