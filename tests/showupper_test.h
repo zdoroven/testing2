@@ -9,6 +9,8 @@
 
 //#define MAX 1024
 
+#define TRAVIS 1
+
 extern "C" {
 #include "common.h"
 }
@@ -56,7 +58,8 @@ TEST(showUpperTest, test1) {
     /*
         Open output file
     */
-    FILE *outputFile = fopen("../../testing2/tests/output/output1.txt", "wb");
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output1.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output1.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -69,7 +72,7 @@ TEST(showUpperTest, test1) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    strcpy(inFile, "../../testing2/tests/input/input1.txt");
+    TRAVIS ? strcpy(inFile, "tests/input/input1.txt") : strcpy(inFile, "../../testing2/tests/input/input1.txt");
     load(txt, inFile);
 
     /*
@@ -88,8 +91,10 @@ TEST(showUpperTest, test1) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected1.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output1.txt", "r");
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected1.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected1.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output1.txt", "r") : outputData = fopen("../../testing2/tests/output/output1.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
@@ -102,7 +107,8 @@ TEST(showUpperTest, test2) {
     /*
         Open output file
     */
-    FILE *outputFile = fopen("../../testing2/tests/output/output2.txt", "wb");
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output2.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output2.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -114,8 +120,8 @@ TEST(showUpperTest, test2) {
     */
 
     text txt = create_text();
-    char inFile[1024];
-    strcpy(inFile, "../../testing2/tests/input/input2.txt");
+    char inFile[MAXLINE];
+    TRAVIS ? strcpy(inFile, "tests/input/input2.txt") : strcpy(inFile, "../../testing2/tests/input/input2.txt");
     load(txt, inFile);
 
     /*
@@ -134,8 +140,10 @@ TEST(showUpperTest, test2) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected2.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output2.txt", "r");
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected2.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected2.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output2.txt", "r") : outputData = fopen("../../testing2/tests/output/output2.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
@@ -148,7 +156,8 @@ TEST(showUpperTest, test3) {
     /*
         Open output file
     */
-    FILE *outputFile = fopen("../../testing2/tests/output/output3.txt", "wb");
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output3.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output3.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -160,8 +169,8 @@ TEST(showUpperTest, test3) {
     */
 
     text txt = create_text();
-    char inFile[1024];
-    strcpy(inFile, "../../testing2/tests/input/input3.txt");
+    char inFile[MAXLINE];
+    TRAVIS ? strcpy(inFile, "tests/input/input3.txt") : strcpy(inFile, "../../testing2/tests/input/input3.txt");
     load(txt, inFile);
 
     /*
@@ -180,8 +189,10 @@ TEST(showUpperTest, test3) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected3.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output3.txt", "r");
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected3.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected3.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output3.txt", "r") : outputData = fopen("../../testing2/tests/output/output3.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
@@ -194,7 +205,8 @@ TEST(showUpperTest, test4) {
     /*
         Open output file
     */
-    FILE *outputFile = fopen("../../testing2/tests/output/output4.txt", "wb");
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output4.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output4.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -206,8 +218,8 @@ TEST(showUpperTest, test4) {
     */
 
     text txt = create_text();
-    char inFile[1024];
-    strcpy(inFile, "../../testing2/tests/input/input4.txt");
+    char inFile[MAXLINE];
+    TRAVIS ? strcpy(inFile, "tests/input/input4.txt") : strcpy(inFile, "../../testing2/tests/input/input4.txt");
     load(txt, inFile);
 
     /*
@@ -226,8 +238,10 @@ TEST(showUpperTest, test4) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected4.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output4.txt", "r");
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected4.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected4.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output4.txt", "r") : outputData = fopen("../../testing2/tests/output/output4.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
@@ -240,7 +254,8 @@ TEST(showUpperTest, test5) {
     /*
         Open output file
     */
-    FILE *outputFile = fopen("../../testing2/tests/output/output5.txt", "wb");
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output5.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output5.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -252,8 +267,8 @@ TEST(showUpperTest, test5) {
     */
 
     text txt = create_text();
-    char inFile[1024];
-    strcpy(inFile, "../../testing2/tests/input/input5.txt");
+    char inFile[MAXLINE];
+    TRAVIS ? strcpy(inFile, "tests/input/input5.txt") : strcpy(inFile, "../../testing2/tests/input/input5.txt");
     load(txt, inFile);
 
     /*
@@ -272,8 +287,10 @@ TEST(showUpperTest, test5) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected5.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output5.txt", "r");
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected5.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected5.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output5.txt", "r") : outputData = fopen("../../testing2/tests/output/output5.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
