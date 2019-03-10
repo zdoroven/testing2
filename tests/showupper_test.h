@@ -58,8 +58,10 @@ TEST(showUpperTest, test1) {
     /*
         Open output file
     */
+
     FILE *outputFile;
     TRAVIS ? outputFile = fopen("tests/output/output1.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output1.txt", "wb");
+
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -107,8 +109,10 @@ TEST(showUpperTest, test2) {
     /*
         Open output file
     */
+
     FILE *outputFile;
     TRAVIS ? outputFile = fopen("tests/output/output2.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output2.txt", "wb");
+
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -156,6 +160,7 @@ TEST(showUpperTest, test3) {
     /*
         Open output file
     */
+
     FILE *outputFile;
     TRAVIS ? outputFile = fopen("tests/output/output3.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output3.txt", "wb");
     if (outputFile == NULL) {
@@ -205,8 +210,10 @@ TEST(showUpperTest, test4) {
     /*
         Open output file
     */
+
     FILE *outputFile;
     TRAVIS ? outputFile = fopen("tests/output/output4.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output4.txt", "wb");
+
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
@@ -254,6 +261,7 @@ TEST(showUpperTest, test5) {
     /*
         Open output file
     */
+
     FILE *outputFile;
     TRAVIS ? outputFile = fopen("tests/output/output5.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output5.txt", "wb");
     if (outputFile == NULL) {
