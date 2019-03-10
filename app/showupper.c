@@ -15,7 +15,8 @@
 
 void toup(char *s) {
   int len = strlen(s);
-  for (int i = 0; i < len; i++) {
+  int i = 0;
+  for (i = 0; i < len; i++) {
     s[i] = toupper(s[i]);
   }
 }

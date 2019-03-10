@@ -22,13 +22,14 @@ int main() {
 
   /* Создаем объект для представления текста */
   text txt = create_text();
+  char* fget;
 
   /* Цикл обработки команд */
   while (1) {
     printf("ed > ");
 
     /* Получаем команду */
-    fgets(cmdline, MAXLINE, stdin);
+    fget = fgets(cmdline, MAXLINE, stdin);
 
     /* Извлекаем имя команды */
     if ((cmd = strtok(cmdline, " \n")) == NULL) {
