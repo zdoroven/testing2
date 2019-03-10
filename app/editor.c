@@ -23,6 +23,7 @@ int main() {
   /* Создаем объект для представления текста */
   text txt = create_text();
   char* fget;
+  UNUSED(fget);
 
   /* Цикл обработки команд */
   while (1) {

@@ -27,7 +27,8 @@ void remove_first_entry_line(text txt) {
 /* Проверяет что строка состоит только из пробелов. */
 int isos(char *str) {
   int len = strlen(str);
-  for (int i = 0; i < len; i++) {
+  int i = 0;
+  for (i = 0; i < len; i++) {
     if (!isspace(str[i])) {
       return 0;
     }
