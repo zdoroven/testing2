@@ -28,8 +28,14 @@ void returnStream(FILE* file, int oldstdOut) {
 }
 
 int executeTest(FILE* expectedData, FILE* outputData) {
-    if (expectedData == NULL) return 0;
-    if (outputData == NULL) return 0;
+    if (expectedData == NULL) {
+        printf("Cannot open expected file \n");
+        return 0;
+    }
+    if (outputData == NULL) {
+        printf("Cannot open output file \n");
+        return 0;
+    }
 
     char expectedLine[MAXLINE];
     char outputLine[MAXLINE];
@@ -51,7 +57,10 @@ TEST(showUpperTest, test1) {
         Open output file
     */
     FILE *outputFile = fopen("../../testing2/tests/output/output1.txt", "wb");
-    if (outputFile == NULL) FAIL();
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
     int oldstdOut = changeStream(outputFile);
 
     /*
@@ -94,7 +103,10 @@ TEST(showUpperTest, test2) {
         Open output file
     */
     FILE *outputFile = fopen("../../testing2/tests/output/output2.txt", "wb");
-    if (outputFile == NULL) FAIL();
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
     int oldstdOut = changeStream(outputFile);
 
     /*
@@ -137,7 +149,10 @@ TEST(showUpperTest, test3) {
         Open output file
     */
     FILE *outputFile = fopen("../../testing2/tests/output/output3.txt", "wb");
-    if (outputFile == NULL) FAIL();
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
     int oldstdOut = changeStream(outputFile);
 
     /*
@@ -180,7 +195,10 @@ TEST(showUpperTest, test4) {
         Open output file
     */
     FILE *outputFile = fopen("../../testing2/tests/output/output4.txt", "wb");
-    if (outputFile == NULL) FAIL();
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
     int oldstdOut = changeStream(outputFile);
 
     /*
@@ -223,7 +241,10 @@ TEST(showUpperTest, test5) {
         Open output file
     */
     FILE *outputFile = fopen("../../testing2/tests/output/output5.txt", "wb");
-    if (outputFile == NULL) FAIL();
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
     int oldstdOut = changeStream(outputFile);
 
     /*
