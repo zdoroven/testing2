@@ -70,7 +70,8 @@ TEST(showUpperTest, test1) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    strcpy(inFile, "../../testing2/tests/input/input1.txt");
+    //strcpy(inFile, "../../testing2/tests/input/input1.txt");
+    strcpy(inFile, "tests/input/input1.txt");
     load(txt, inFile);
 
     /*
@@ -89,8 +90,10 @@ TEST(showUpperTest, test1) {
         Execute test
     */
 
-    FILE *expectedData = fopen("../../testing2/tests/expected/expected1.txt", "r");
-    FILE *outputData = fopen("../../testing2/tests/output/output1.txt", "r");
+    //FILE *expectedData = fopen("../../testing2/tests/expected/expected1.txt", "r");
+    FILE *expectedData = fopen("tests/expected/expected1.txt", "r");
+    //FILE *outputData = fopen("../../testing2/tests/output/output1.txt", "r");
+    FILE *outputData = fopen("tests/output/output1.txt", "r");
 
     if (executeTest(expectedData, outputData) == 1) {
         SUCCEED();
