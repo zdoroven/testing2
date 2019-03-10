@@ -57,7 +57,7 @@ TEST(showUpperTest, test1) {
         Open output file
     */
     //FILE *outputFile = fopen("../../testing2/tests/output/output1.txt", "wb");
-    FILE *outputFile = fopen("/tests/output/output1.txt", "wb");
+    FILE *outputFile = fopen("tests/output/output1.txt", "wb");
     if (outputFile == NULL) {
         printf("Cannot open file for output");
         FAIL();
