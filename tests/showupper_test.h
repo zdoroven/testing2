@@ -9,7 +9,7 @@
 
 //#define MAX 1024
 
-#define TRAVIS 0
+#define TRAVIS 1
 
 extern "C" {
 #include "common.h"

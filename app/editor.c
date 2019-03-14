@@ -69,6 +69,11 @@ int main() {
       continue;
     }
 
+    if (strcmp(cmd, "show") == 0) {
+      show(txt);
+      continue;
+    }
+
     /* Удаляем первую пустую строку */
     if (strcmp(cmd, "r1e") == 0) {
       remove_first_entry_line(txt);
