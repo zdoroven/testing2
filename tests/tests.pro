@@ -18,7 +18,8 @@ LIBS += -lgcov
 HEADERS += ../app/common.h \
     ../app/text/_text.h \
     ../app/text/text.h \
-    showupper_test.h
+    showupper_test.h \
+    r1e_test.h
 
 SOURCES += main.cpp \
     ../app/load.c \
@@ -34,6 +35,7 @@ SOURCES += main.cpp \
     ../app/text/process_forward.c \
     ../app/text/create_text.c \
     ../app/text/prepend_line.c \
-    ../app/text/remove_all.c
+    ../app/text/remove_all.c \
+    ../app/show.c
 
 INCLUDEPATH += ../app

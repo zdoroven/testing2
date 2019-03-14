@@ -1,7 +1,8 @@
 //#include "tst_test1.h"
 //#include "fibonachi_test.h"
 //#include "equatation_test.h"
-#include "showupper_test.h"
+//#include "showupper_test.h"
+#include "r1e_test.h"
 
 #include <gtest/gtest.h>
 

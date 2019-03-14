@@ -10,6 +10,7 @@ SOURCES += editor.c \
     cursor_to_begin.c \
     getcrsr.c \
     save.c \
+    show.c \
     mwcrsr.c \
     text/append_line.c \
     text/delete_line.c \
