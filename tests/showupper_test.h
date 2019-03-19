@@ -72,7 +72,7 @@ TEST(showUpperTest, test1) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    TRAVIS ? strcpy(inFile, "tests/input/input1.txt") : strcpy(inFile, "../../testing2/tests/input/input1.txt");
+    TRAVIS ? strncpy(inFile, "tests/input/input1.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input1.txt", MAXLINE);
     load(txt, inFile);
 
     /*
@@ -121,7 +121,7 @@ TEST(showUpperTest, test2) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    TRAVIS ? strcpy(inFile, "tests/input/input2.txt") : strcpy(inFile, "../../testing2/tests/input/input2.txt");
+    TRAVIS ? strncpy(inFile, "tests/input/input2.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input2.txt", MAXLINE);
     load(txt, inFile);
 
     /*
@@ -170,7 +170,7 @@ TEST(showUpperTest, test3) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    TRAVIS ? strcpy(inFile, "tests/input/input3.txt") : strcpy(inFile, "../../testing2/tests/input/input3.txt");
+    TRAVIS ? strncpy(inFile, "tests/input/input3.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input3.txt", MAXLINE);
     load(txt, inFile);
 
     /*
@@ -219,7 +219,7 @@ TEST(showUpperTest, test4) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    TRAVIS ? strcpy(inFile, "tests/input/input4.txt") : strcpy(inFile, "../../testing2/tests/input/input4.txt");
+    TRAVIS ? strncpy(inFile, "tests/input/input4.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input4.txt", MAXLINE);
     load(txt, inFile);
 
     /*
@@ -268,7 +268,7 @@ TEST(showUpperTest, test5) {
 
     text txt = create_text();
     char inFile[MAXLINE];
-    TRAVIS ? strcpy(inFile, "tests/input/input5.txt") : strcpy(inFile, "../../testing2/tests/input/input5.txt");
+    TRAVIS ? strncpy(inFile, "tests/input/input5.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input5.txt", MAXLINE);
     load(txt, inFile);
 
     /*
