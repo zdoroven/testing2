@@ -37,7 +37,7 @@ static void show_line(int index, char *contents, int cursor, void *data) {
   if (cursor >= 0) {
     strncpy(output_line, line, cursor);
     output_line[cursor] = '|';
-    strcpy(output_line + cursor + 1, line + cursor);
+    strncpy(output_line + cursor + 1, line + cursor, MAXLINE);
     printf("%s", output_line);
     if (output_line[strlen(output_line) - 1] != '\n')
       printf("\n");
