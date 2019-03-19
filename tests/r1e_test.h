@@ -1,5 +1,5 @@
-#ifndef FIBONACHI_H
-#define FIBONACHI_H
+#ifndef R1E_TEST_H
+#define R1E_TEST_H
 
 #include <gtest/gtest.h>
 #include <sys/io.h>
@@ -15,7 +15,7 @@ extern "C" {
 #include "common.h"
 }
 
-int changeStream(FILE* file) {
+/*int changeStream(FILE* file) {
     int oldstdOut = dup(1);
     close(1);
     dup2(fileno(file), 1);
@@ -50,7 +50,7 @@ int executeTest(FILE* expectedData, FILE* outputData) {
     }
 
     return 1;
-}
+}*/
 
 
 
@@ -207,4 +207,4 @@ TEST(r1e_test, test3) {
 
 
 
-#endif // FIBONACHI_H
+#endif // R1E_TEST_H

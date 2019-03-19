@@ -1,5 +1,5 @@
-#ifndef FIBONACHI_H
-#define FIBONACHI_H
+#ifndef MLB_TEST_H
+#define MLB_TEST_H
 
 #include <gtest/gtest.h>
 #include <sys/io.h>
@@ -7,15 +7,13 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-//#define MAX 1024
-
 #define TRAVIS 1
 
 extern "C" {
 #include "common.h"
 }
 
-int changeStream(FILE* file) {
+/*int changeStream(FILE* file) {
     int oldstdOut = dup(1);
     close(1);
     dup2(fileno(file), 1);
@@ -50,7 +48,7 @@ int executeTest(FILE* expectedData, FILE* outputData) {
     }
 
     return 1;
-}
+}*/
 
 
 
@@ -159,4 +157,4 @@ TEST(mlb_test, test2) {
 
 
 
-#endif // FIBONACHI_H
+#endif // MLB_TEST_H
