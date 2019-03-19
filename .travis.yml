@@ -3,7 +3,7 @@ language:
   
 before_install:
   - pip install --user cpp-coveralls
-  - pip install --user valgrind
+  - pip install valgrind
   
 addons:
   sonarcloud:
