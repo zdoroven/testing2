@@ -3,6 +3,7 @@ language:
   
 before_install:
   - pip install --user cpp-coveralls
+  - pip install --user valgrind
   
 addons:
   sonarcloud:
@@ -13,6 +14,7 @@ addons:
 script:
   - qmake
   - make
+  - valgrind ./tests/tests
   - ./tests/tests
   
 after_success:
