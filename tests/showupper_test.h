@@ -39,8 +39,8 @@ int executeTest(FILE* expectedData, FILE* outputData) {
         return 0;
     }
 
-    char expectedLine[MAXLINE];
-    char outputLine[MAXLINE];
+    char expectedLine[MAXLINE+1];
+    char outputLine[MAXLINE+1];
 
     while ((fgets(expectedLine, MAXLINE, expectedData) != NULL) | (fgets(outputLine, MAXLINE, outputData) != NULL)) {
         expectedLine[strlen(expectedLine) - 1] = '\0';
