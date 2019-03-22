@@ -71,7 +71,7 @@ TEST(showUpperTest, test1) {
     */
 
     text txt = create_text();
-    char inFile[MAXLINE];
+    char inFile[255];
     TRAVIS ? strncpy(inFile, "tests/input/input1.txt", 50) : strncpy(inFile, "../../testing2/tests/input/input1.txt", 50);
     load(txt, inFile);
 
