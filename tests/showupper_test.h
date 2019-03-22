@@ -65,14 +65,16 @@ TEST(showUpperTest, test1) {
         FAIL();
     }
     int oldstdOut = changeStream(outputFile);
+    printf("Dup stdout \n");
 
     /*
         Load input data
     */
 
     text txt = create_text();
-    char inFile[255];
-    TRAVIS ? strncpy(inFile, "tests/input/input1.txt", 50) : strncpy(inFile, "../../testing2/tests/input/input1.txt", 50);
+    char inFile[MAXLINE];
+    TRAVIS ? strncpy(inFile, "tests/input/input1.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input1.txt", MAXLINE);
+    printf("Copied \n");
     load(txt, inFile);
 
     /*
