@@ -72,7 +72,9 @@ TEST(showUpperTest, test1) {
 
     text txt = create_text();
     //char inFile[MAXLINE];
-    TRAVIS ? load(txt, "tests/input/input1.txt") : load(txt, "../../testing2/tests/input/input1.txt");
+    const char* f1 = "tests/input/input1.txt";
+    const char* f2 = "../../testing2/tests/input/input1.txt";
+    TRAVIS ? load(txt, f1) : load(txt, f2);
     //inFile[sizeof (inFile) - 1] = '\0';
     //load(txt, inFile);
 
