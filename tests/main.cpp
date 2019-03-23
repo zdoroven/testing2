@@ -1,5 +1,5 @@
-//#include "showupper_test.h"
-//#include "r1e_test.h"
+#include "showupper_test.h"
+#include "r1e_test.h"
 #include "mlb_test.h"
 
 #include <gtest/gtest.h>
