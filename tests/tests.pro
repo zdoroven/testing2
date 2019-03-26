@@ -27,8 +27,6 @@ SOURCES += main.cpp \
     ../app/showupper.c \
     ../app/remove_first_entry_line.c \
     ../app/cursor_to_begin.c \
-    ../app/getcrsr.c \
-    ../app/save.c \
     ../app/mwcrsr.c \
     ../app/text/append_line.c \
     ../app/text/delete_line.c \
