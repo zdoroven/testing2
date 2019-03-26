@@ -71,12 +71,9 @@ TEST(showUpperTest, test1) {
     */
 
     text txt = create_text();
-    //char inFile[MAXLINE];
-    const char* f1 = "tests/input/input1.txt";
-    const char* f2 = "../../testing2/tests/input/input1.txt";
-    TRAVIS ? load(txt, f1) : load(txt, f2);
-    //inFile[sizeof (inFile) - 1] = '\0';
-    //load(txt, inFile);
+    char inFile[MAXLINE];
+    TRAVIS ? strncpy(inFile, "tests/input/input1.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input1.txt", MAXLINE);
+    load(txt, inFile);
 
     /*
         Run test function
