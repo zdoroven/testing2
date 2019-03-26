@@ -53,16 +53,6 @@ int main() {
       continue;
     }
 
-    /* Сохраняем текст в указанный файл */
-    if (strcmp(cmd, "save") == 0) {
-      if ((arg = strtok(NULL, " \n")) == NULL) {
-        fprintf(stderr, "Usage: save filename\n");
-      } else {
-        save(txt, arg);
-      }
-      continue;
-    }
-
     /* Переводим в верхний регистр */
     if (strcmp(cmd, "showupper") == 0) {
       showupper(txt);
