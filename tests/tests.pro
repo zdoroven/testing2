@@ -20,7 +20,8 @@ HEADERS += ../app/common.h \
     ../app/text/text.h \
     showupper_test.h \
     r1e_test.h \
-    mlb_test.h
+    mlb_test.h \
+    shared.h
 
 SOURCES += main.cpp \
     ../app/load.c \
